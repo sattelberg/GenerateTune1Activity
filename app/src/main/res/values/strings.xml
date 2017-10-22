@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">GenerateTune1Activity</string>
+    <string name = "selectRootLabel">Select Root Note</string>
+    <string name = "getMinNoteLabel">Minimum Note Length</string>
+    <string name = "getBeatsLabel">Number of Beats</string>
+    <string name = "noteBeatLabel">Beat Note</string>
+    <string name = "getNumNotesLabel">Number of Notes</string>
+    <string name = "generateBtnLabel">Generate</string>
+    <string-array name ="RootNoteSpinner">
+        <item>C</item>
+        <item>C#/Db</item>
+        <item>D</item>
+        <item>D#/Eb</item>
+        <item>E</item>
+        <item>F</item>
+        <item>F#</item>
+        <item>G</item>
+        <item>G#/Ab</item>
+        <item>A</item>
+        <item>A#/Bb</item>
+        <item>B</item>
+    </string-array>
+    <string-array name = "ScaleTypeSpinner">
+        <item> Heptatonic-Major </item>
+    </string-array>
+</resources>

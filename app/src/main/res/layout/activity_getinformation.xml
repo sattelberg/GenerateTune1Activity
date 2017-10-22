@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.allansattelberg.generatetune1activity.GetInformationActivity">
+
+
+    <Spinner
+        android:id="@+id/scaleSpinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:entries = "@array/RootNoteSpinner"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_marginTop="-7dp"
+        app:layout_constraintTop_toBottomOf="@+id/rootSpinner" />
+
+
+    <Spinner
+        android:id="@+id/rootSpinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:entries = "@array/ScaleTypeSpinner"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <EditText
+        android:id="@+id/minNote"
+        android:layout_width="235dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="31dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scaleSpinner" />
+
+    <EditText
+        android:id="@+id/numBeats"
+        android:layout_width="234dp"
+        android:layout_height="41dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/minNote"
+        tools:layout_editor_absoluteX="150dp"
+        tools:layout_editor_absoluteY="173dp" />
+
+    <EditText
+        android:id="@+id/numNotes"
+        android:layout_width="233dp"
+        android:layout_height="41dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="19dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numBeats"
+        tools:layout_editor_absoluteX="151dp" />
+
+    <Button
+        android:id="@+id/generateBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
+        android:onClick="onGenerate"
+        android:text="@string/generateBtnLabel"
+        app:layout_constraintHorizontal_bias="0.553"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numNotes" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/selectRootLabel"
+        android:labelFor = "@+id/rootSpinner"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/notesview"
+        android:layout_width="367dp"
+        android:layout_height="40dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.529"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/generateBtn" />
+
+    <TextView
+        android:id="@+id/rythmView"
+        android:layout_width="364dp"
+        android:layout_height="32dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/notesview"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/minNoteTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="45dp"
+        android:labelFor="@id/minNote"
+        android:text="@string/getMinNoteLabel"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/minNote"
+        app:layout_constraintTop_toBottomOf="@+id/scaleSpinner" />
+
+    <TextView
+        android:id="@+id/numBeatsTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="32dp"
+        android:labelFor="@id/numBeats"
+        android:text="@string/getBeatsLabel"
+        app:layout_constraintHorizontal_bias="0.285"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/numBeats"
+        app:layout_constraintTop_toBottomOf="@+id/minNoteTag" />
+
+    <TextView
+        android:id="@+id/numNotesTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:labelFor="@id/numNotes"
+        android:text="@string/getNumNotesLabel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/numNotes"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.502" />
+
+
+
+    <EditText
+        android:id="@+id/beatNote"
+        android:layout_width="230dp"
+        android:layout_height="39dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/notesview"
+        app:layout_constraintLeft_toRightOf="@+id/beatNoteTag"
+        app:layout_constraintTop_toBottomOf="@+id/numNotes"
+        app:layout_constraintVertical_bias="0.171" />
+    <TextView
+        android:id="@+id/beatNoteTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="27dp"
+        android:layout_marginTop="34dp"
+        android:labelFor="@id/beatNote"
+        android:text="@string/noteBeatLabel"
+        app:layout_constraintBottom_toTopOf="@+id/notesview"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numNotesTag"
+        app:layout_constraintVertical_bias="0.098" />
+</android.support.constraint.ConstraintLayout>
